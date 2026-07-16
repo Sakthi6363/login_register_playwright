@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <h3 id="welcome"></h3>
+
+    <br>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+</div>
+
+<script>
+
+// Check Login
+const username = localStorage.getItem("username");
+
+if(!username){
+
+    alert("Please Login First");
+
+    window.location.href = "login.html";
+
+}
+else{
+
+    document.getElementById("welcome").innerHTML =
+        "Welcome, " + username;
+
+}
+
+// Logout
+function logout(){
+
+    localStorage.removeItem("username");
+
+    alert("Logout Successful");
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>
+
